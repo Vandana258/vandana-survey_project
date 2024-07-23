@@ -178,6 +178,11 @@
     color: black !important;
     /* color: white !important; */
 }
+
+.dis-fl-jc-cen{
+    display: flex !important;
+    justify-content: center !important;
+}
 .sp-bt{
     display: flex !important;
     /* justify-content: space-between !important; */
@@ -191,7 +196,8 @@
 } */
 .logoName{
     /* font-size: 72px; */
-    background: linear-gradient(to right, rgb(166 30 30 / 54%), #c65c5c);
+    background-color: #7085B6;
+    /* background: linear-gradient(to right, rgb(166 30 30 / 54%), #c65c5c); */
     /* background: linear-gradient(to right, #265383, #22c975); */
     -webkit-background-clip: text;
     /* background: -webkit-linear-gradient(#eee, #333); */
@@ -242,7 +248,8 @@
     /* background-color: #fd7575; */
     /* background-color: #624CAB; */
     /* background-color: #7e67cb  !important; */
-    background: linear-gradient(to right, rgb(166 30 30 / 54%), #c65c5c);
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #a8babe 100%);
+    /* background: linear-gradient(to right, rgb(166 30 30 / 54%), #c65c5c); */
     /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
     /* background-image: linear-gradient(to left bottom, #9588be,
         #9182c1, #8d7cc3, #8875c6, #846fc8, #7d67c5,
@@ -255,10 +262,11 @@
 }
 
 .links:hover{
-
+    background-color: #c1cee2;
+    color: #37508a!important;
     /* background-color: #9db0c5; */
-    background-color: #ca606091;
-    color: white !important;
+    /* background-color: #ca606091;
+    color: white !important; */
     border-radius: 5px;
 }
 
@@ -524,11 +532,11 @@
   }
 
 
-@media (min-width: 601px) {
+ /* @media (min-width: 601px) {
     .section-content {
-        margin-left: 250px; /* Adjust based on expanded sidebar width */
+        margin-left: 250px; 
     }
-}
+} */
 
 .menu-icon {
     display: none;

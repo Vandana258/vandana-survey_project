@@ -15,6 +15,9 @@
     /* background: url('../assets/images/wavee.avif'); */
     background-repeat: no-repeat;
     background-size: cover;
+    
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #a8babe 100%);
+        /* background: linear-gradient(to right, rgb(255 71 71 / 54%), #f8a8a8); */
     /* background-image: linear-gradient(to right top, #6ea7ff, #5d8bec, #506fd7, #4853c0, #4335a8); */
     /* background-image: linear-gradient(to right top, #f0b6b6, #eb9a98, #e37e7a, #d9615b, #cd423c); */
     /* background-image: linear-gradient(to right top, #f0b6b6, #ee9d9c, #eb8480, #e46a64, #dc4f48); */
@@ -76,6 +79,7 @@
     align-items: center;
     /* background-color: #eeeeee !important; */
     background-color: white;
+    border-radius: 7px;
 }
 
 .text-center{
@@ -89,6 +93,7 @@
     padding: 1rem 3rem ;
     min-height: 500px;
     flex-direction: column;
+    border-radius: 7px !important;
     /* background-color: rgb(221, 207, 207); */
     /* background-color: rgb(242 242 242); */
     z-index: 10;
@@ -183,19 +188,6 @@
     margin: 10px 0px 10px 0px !important;
     display: block;
     border: none !important;
-}
-
-.bg-color{
-    /* background-color: #fd7575 !important; */
-    /* background-color: #624CAB !important; */
-    /* background-color: #7e67cb  !important;
-    background-image: linear-gradient(to left bottom, #9588be,
-            #9182c1, #8d7cc3, #8875c6, #846fc8, #7d67c5,
-            #7760c1, #7058be, #664db5, #5b42ab, #5138a2, #462d99); */
-            /* border: 2px solid linear-gradient(to right, #265383, #22c975)!important; */
-            border: 2px solid #265383 !important;
-            background: linear-gradient(to right, #265383, #22c975) !important;
-            -webkit-background-clip: text !important;
 }
 
 .form-group-signup{
@@ -320,7 +312,8 @@
 }
 
 .main-heading{
-    background: linear-gradient(to right, #265383, #22c975) !important;
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #a8babe 100%);
+    /* background: linear-gradient(to right, #265383, #22c975) !important; */
     /* background: -webkit-linear-gradient(#eee, #333); */
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent;

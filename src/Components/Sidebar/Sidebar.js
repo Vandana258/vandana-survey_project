@@ -74,17 +74,17 @@ function Sidebar({ sidebar }) {
               {showSubjects && (
                 <div className='subject-links'>
                   <div style={{ padding: '0px 14px' }}>
-                    <Link className={`links ${activePage === '/section1' ? 'active' : ''}`} to='/section1'>
+                    <Link className={`links dis-fl-jc-cen ${activePage === '/section1' ? 'active' : ''}`} to='/section1'>
                       <span className='link-text'>Section A</span>
                     </Link>
                   </div>
                   <div style={{ padding: '0px 14px' }}>
-                    <Link className={`links ${activePage === '/section2' ? 'active' : ''}`} to='/section2'>
+                    <Link className={`links dis-fl-jc-cen ${activePage === '/section2' ? 'active' : ''}`} to='/section2'>
                       <span className='link-text'>Section B</span>
                     </Link>
                   </div>
                   <div style={{ padding: '0px 14px' }}>
-                    <Link className={`links ${activePage === '/section3' ? 'active' : ''}`} to='/section3'>
+                    <Link className={`links dis-fl-jc-cen ${activePage === '/section3' ? 'active' : ''}`} to='/section3'>
                       <span className='link-text'>Section C</span>
                     </Link>
                   </div>

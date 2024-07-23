@@ -11,7 +11,7 @@ import './Login.css';
 
 function Login(){
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     // useEffect(() => {
     //     const isAuthenticated = localStorage.getItem('userLoggedIn');
     //     if (isAuthenticated) {
@@ -34,65 +34,65 @@ function Login(){
     });
 
     
-    // const handleLogin = async (e) => {
-    //     // e.preventDefault(); // Prevent default form submission behavior
+    const handleSubmit = async (values) => {
+        // e.preventDefault(); // Prevent default form submission behavior
+console.log("values----------------------", values);
+        try {
+            const response = await axios.post("http://localhost:3005/login", {
+                email: formik.values.email,
+                password: formik.values.password
+            });
 
-    //     try {
-    //         const response = await axios.post(process.env.REACT_APP_API_BASE_URL+ 'login', {
-    //             email: formik.values.email,
-    //             password: formik.values.password
-    //         });
-
-    //         if (response.data.success) {
-    //             const Toast = Swal.mixin({
-    //                 toast: true,
-    //                 position: 'top-end',
-    //                 showConfirmButton: false,
-    //                 timer: 3000,
-    //                 timerProgressBar: true,
-    //                 didOpen: (toast) => {
-    //                     toast.addEventListener('mouseenter', Swal.stopTimer);
-    //                     toast.addEventListener('mouseleave', Swal.resumeTimer);
-    //                 }
-    //             });
+            if (response.data.success) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer);
+                        toast.addEventListener('mouseleave', Swal.resumeTimer);
+                    }
+                });
     
-    //             Toast.fire({
-    //                 icon: 'success',
-    //                 title: 'Login Successful!'
-    //             });
-    //             console.log("Login Successfull!");
-    //             // console.log("Token:", response.data.data.accessToken);
-    //             localStorage.setItem('userId', response.data.data.id);
-    //             localStorage.setItem('userName', response.data.data.name);
-    //             localStorage.setItem('userLoggedIn',true);
-    //             navigate("/item");
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Login Successful!'
+                });
+                console.log("Login Successfull!");
+                // console.log("Token:", response.data.data.accessToken);
+                localStorage.setItem('userId', response.data.data.id);
+                localStorage.setItem('userName', response.data.data.name);
+                localStorage.setItem('userLoggedIn',true);
+                navigate("/survey");
 
-    //         } else {
-    //             Swal.fire({
-    //                 icon: 'error',
-    //                 title: 'Login Failed',
-    //                 text: response.data.message,
-    //                 customClass: {
-    //                     popup: 'swal2-popup',
-    //                     confirmButton: 'addEditCancelBtn addItemBtn',
-    //                 }
-    //             });
-    //             console.log("Login Failed:", response.data.message);
-    //             formik.setErrors({ apiError: response.data.message });
-    //         }
-    //     } catch (error) {
-    //         Swal.fire({
-    //             icon: 'error',
-    //             title: 'Login Failed',
-    //             text: 'An error occurred while logging in. Please try again later.',
-    //             customClass: {
-    //                 popup: 'swal2-popup',
-    //                 confirmButton: 'addEditCancelBtn addItemBtn',
-    //             }
-    //         });
-    //         console.error("Login Error:", error);
-    //     }
-    // }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: response.data.message,
+                    customClass: {
+                        popup: 'swal2-popup',
+                        confirmButton: 'addEditCancelBtn addItemBtn',
+                    }
+                });
+                console.log("Login Failed:", response.data.message);
+                formik.setErrors({ apiError: response.data.message });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: 'An error occurred while logging in. Please try again later.',
+                customClass: {
+                    popup: 'swal2-popup',
+                    confirmButton: 'addEditCancelBtn addItemBtn',
+                }
+            });
+            console.error("Login Error:", error);
+        }
+    }
 
     return (
         <Grid className='container-grid'>
@@ -103,7 +103,7 @@ function Login(){
                             <Grid className='logo'>
                                 <Typography variant='h3' className='main-heading'> Survey</Typography>
                             </Grid>
-                            <Grid className='heading-login' style={{marginTop:'-15px'}}>
+                            <Grid className='heading-login'>
                                 <Typography variant="h6" className='heading'>Welcome back!</Typography>
                             </Grid>
                             <Grid className='form-p'>
@@ -182,8 +182,8 @@ function Login(){
                                     </Grid>
                                 </Link> */}
                                 <Link>
-                                    <Grid className='form-group-login login-signup-btn btn border-radius addItemBtn ' style={{width:'100%'}} onClick={formik.handleSubmit }>
-                                        <Button className='login-btn button fw' onClick={formik.handleSubmit }>
+                                    <Grid className='form-group-login login-signup-btn btn border-radius addItemBtn  btn btn-outline-primary' style={{width:'100%'}} onClick={formik.handleSubmit }>
+                                        <Button className='login-btn button fw ' onClick={handleSubmit}>
                                             <LoginIcon style={{fontSize:'18px', marginRight:'5px', marginLeft:'-5px', marginTop:'-1px'}}/>Login
                                         </Button>
                                     </Grid>

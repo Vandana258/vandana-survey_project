@@ -16,6 +16,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 const db = {};
 db.users = require('./user.model')(sequelize);
 db.sections = require('./section.model')(sequelize); 
+db.surveyAnswer = require('./survey.model')(sequelize);
 
 
 db.Sequelize = Sequelize;
